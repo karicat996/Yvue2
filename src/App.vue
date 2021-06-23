@@ -1,31 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
+  <tab-bar>
+<tab-bar-item path="/Home" activeColor="red">
+  <img slot="item-icon" src="./assets/img/TabBar/首页.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/TabBar/首页 _活跃.svg" alt="">
+        <div slot="item-text">首页</div>
+</tab-bar-item>
+<tab-bar-item path="/cart" activeColor="red" >
+  <img slot="item-icon" src="./assets/img/TabBar/分类 .svg" alt="">
+    <img slot="item-icon-active" src="./assets/img/TabBar/分类_活跃.svg" alt="">
+        <div slot="item-text">分类</div>
+</tab-bar-item>
+<tab-bar-item path="/category" activeColor="red" >
+  <img  slot="item-icon" src="./assets/img/TabBar/购物车.svg" alt="">
+    <img slot="item-icon-active" src="./assets/img/TabBar/购物车_活跃.svg" alt="">
+        <div slot="item-text">购物车</div>
+</tab-bar-item>
+<tab-bar-item path="/profile1" activeColor="red" >
+  <img  slot="item-icon" src="./assets/img/TabBar/我 的.svg" alt="">
+    <img slot="item-icon-active" src="./assets/img/TabBar/我 的 _活跃.svg" alt="">
+        <div slot="item-text">我的</div>
+</tab-bar-item>
+  </tab-bar>
   </div>
 </template>
+<script>
+import TabBar from './components/common/tabbar/TabBar'
+import TabBarItem from './components/content/mainTabbar/TabBarItem'
+export default{
+  name:'App',
+  components:{
+    TabBar,
+    TabBarItem
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  }
 }
-#nav {
-  padding: 30px;
-}
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style scoped>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import './assets/css/base.css';
+
 </style>
+
+
